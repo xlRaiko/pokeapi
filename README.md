@@ -22,6 +22,19 @@ El proyecto es un juego interactivo de consola inspirado en Pokémon, donde los 
 Por cada nivel que obtenga el usuario, le permitirá el acceso a nuevas rutas dentro de la API para encontrarse con nuevos pokemons.
 Los pokemons de cada ruta no son aleatorios, están colocados de manera manual.
 
+El listado de rutas disponibles son:
+
+* ⛺ Pradera soleada (Default -> Nivel 1).
+* 🌳 Bosque frondoso (Nivel 2).
+* 🗻 Monte Rocoso (Nivel 3).
+* 🌋 Volcán del desierto (Nivel 4).
+* 🏭 Central eléctrica abandonada (Nivel 5).
+* 🛕 Ruinas antiguas (Nivel 6).
+* 🌊 Mar tranquilo (Nivel 7).
+* 🕌 Templo del valle (Nivel 8).
+* 🏡 Guardería (Nivel 9).
+* 🕋 Dimensión extraña (Nivel 10).
+
 *// Funciones de la API //*
 
 * Dart como lenguaje principal.
@@ -31,7 +44,7 @@ Los pokemons de cada ruta no son aleatorios, están colocados de manera manual.
 
 *// Menú de comandos ocultos para Debug //*
 
-Existe un menú cuando un usuario está registrado oculto para comandos, permitiendo forzar opciones dentro de la API, para acceder a él, se acceder desde el primer menú del juego tras logearse utilizando la opción 6 (oculta). Te abrirá un panel de información sobre comandos.
+Existe un menú cuando un usuario está registrado oculto para comandos, permitiendo forzar opciones dentro de la API, para acceder a datos de la misma. Se puede acceder desde el primer menú del juego tras logearse utilizando la opción 6 (oculta). Te abrirá un panel de información sobre comandos.
 
 Las funciones disponibles en el menú de comandos Debug son:
 
