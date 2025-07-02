@@ -62,7 +62,9 @@ class EncuentroPokemon {
           stdout.writeln("4. 🌐 Capturar (Intentos: $intentosCaptura)");
           stdout.writeln("5. 🐾 Huir");
           stdout.writeln("6. 👋 Salir de la ruta");
+          stdout.writeln("");
           stdout.write("Elige una opción: ");
+          stdout.writeln("");
           String? opcion = stdin.readLineSync();
 
           if (opcion == null || opcion.trim().isEmpty) {
@@ -206,15 +208,15 @@ class EncuentroPokemon {
   }
 
   bool validarParametrosDanio(Pokemon atacante, Pokemon defensor, Movimiento movimiento) {
-    if (atacante.ataque == null || atacante.ataqueEspecial == null) {
+    if (atacante.ataqueEspecial == null) {
       stdout.writeln("⚠️ Atacante (${atacante.nombre}) tiene estadísticas inválidas.");
       return false;
     }
-    if (defensor.defensa == null || defensor.defensaEspecial == null || defensor.tipos.isEmpty) {
+    if (defensor.defensaEspecial == null || defensor.tipos.isEmpty) {
       stdout.writeln("⚠️ Defensor (${defensor.nombre}) tiene estadísticas o tipos inválidos.");
       return false;
     }
-    if (movimiento.tipo == null || movimiento.tipo.isEmpty || movimiento.potencia == null) {
+    if (movimiento.tipo.isEmpty) {
       stdout.writeln("⚠️ Movimiento (${movimiento.nombre}) tiene tipo o potencia inválidos.");
       return false;
     }
@@ -223,11 +225,6 @@ class EncuentroPokemon {
 
   Future<Movimiento?> elegirMovimiento(Pokemon pokemon) async {
     try {
-      if (pokemon == null) {
-        stdout.writeln("⚠️ No hay Pokémon seleccionado.");
-        return null;
-      }
-
       if (pokemon.movimientos.isEmpty) {
         stdout.writeln("⚠️ Este Pokémon no tiene movimientos disponibles.");
         return null;
@@ -258,7 +255,7 @@ class EncuentroPokemon {
   Future<int> calcularDanio(Pokemon atacante, Pokemon defensor, Movimiento movimiento) async {
     try {
 
-      if (movimiento.tipo == null || movimiento.tipo.isEmpty) {
+      if (movimiento.tipo.isEmpty) {
         stdout.writeln("⚠️ El movimiento no tiene un tipo válido: ${movimiento.nombre}");
         return 1;
       }
@@ -269,7 +266,7 @@ class EncuentroPokemon {
 
       double multiplicador = 1.0;
       for (var tipoDefensor in defensor.tipos) {
-        if (tipoDefensor == null || tipoDefensor.isEmpty) {
+        if (tipoDefensor.isEmpty) {
           stdout.writeln("⚠️ Tipo defensor inválido para ${defensor.nombre}");
           continue;
         }

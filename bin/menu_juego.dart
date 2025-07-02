@@ -26,7 +26,9 @@ class MenuJuego {
       stdout.writeln("3. ⛺ Ver rutas disponibles");
       stdout.writeln("4. 🧮 Tipos del pokemon");
       stdout.writeln("5. 👋 Salir del juego");
+      stdout.writeln("");
       stdout.write("Elige una opción: ");
+      stdout.writeln("");
       String? opcion = stdin.readLineSync();
 
       if (opcion == null || opcion.trim().isEmpty) {

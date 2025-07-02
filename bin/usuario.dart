@@ -181,7 +181,9 @@ class Usuario {
         stdout.writeln("\n¿Qué deseas hacer?");
         stdout.writeln("1. 🐾 Acceder a una ruta");
         stdout.writeln("2. 👋 Salir del menú de rutas");
+        stdout.writeln("");
         stdout.write("Elige una opción: ");
+        stdout.writeln("");
         String? opcion = stdin.readLineSync();
         if (opcion == null || opcion.trim().isEmpty) {
           stdout.writeln("❌ Entrada inválida.");
